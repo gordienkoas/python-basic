@@ -53,4 +53,4 @@ def filter_numbers(numbers_list, filter_type):
     elif filter_type == PRIME:
         return [number for number in numbers_list if is_prime(number) == True]
     else:
-        return print("ValueError")
+        return "ValueError"
