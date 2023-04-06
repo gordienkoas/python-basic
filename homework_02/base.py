@@ -16,7 +16,6 @@ class Vehicle(ABC):
             if self.fuel < self.fuel_consumption:
                 raise LowFuelError
 
-
     def move(self, distance: int):
         required_fuel = distance * (self.fuel_consumption)
         fuel_now = self.fuel
