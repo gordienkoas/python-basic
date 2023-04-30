@@ -1,5 +1,5 @@
 import uvicorn
-import fastapi import FastAPI
+from fastapi import FastAPI
 
 
 
