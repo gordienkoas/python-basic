@@ -1,0 +1,18 @@
+h1 {
+    border: 2px #eee solid;
+    color: green;
+    text-align: center;
+    padding: 10px;
+}
+.about {
+    border: 2px #eee solid;
+    color: red;
+    text-align: center;
+    padding: 10px;
+}
+.h1add{
+    border: 2px #eee solid;
+    color: yellow;
+    text-align: center;
+    padding: 10px;
+}
