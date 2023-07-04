@@ -1,4 +1,4 @@
-FROM python:3.8-alpine
+FROM python:3.11
 # copy the requirements file into the image
 COPY ./requirements.txt /app/requirements.txt
 # switch working directory
@@ -7,7 +7,7 @@ WORKDIR /app
 RUN pip install -r requirements.txt
 RUN pip install flask_sqlalchemy
 # copy every content from the local file to the image
-COPY . /app
+COPY app.py app.py
 # configure the container to run in an executed manner
 ENTRYPOINT ["python"]
 CMD ["app.py"]

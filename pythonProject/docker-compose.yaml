@@ -3,7 +3,7 @@ version: "3.9"
 services:
   app:
     build:
-      dockerfile: ./Dockerfile
+      dockerfile: ../homework_06/Dockerfile
       context: ./
     environment:
       CONFIG_CLASS: ProductionConfig
