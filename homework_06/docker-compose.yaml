@@ -1,21 +1,24 @@
 version: "3"
 
 services:
-  pg:
-    image: postgres
-    container_name: postgresflask
-    environment:
-      POSTGRES_DB: blog
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: pass
-    ports:
-      - "5432:5432"
   app:
     build:
       dockerfile: ./Dockerfile
       context: ./
-    environment:
-      CONFIG_CLASS: ProductionConfig
-      SQLALCHEMY_DATABASE_URI: postgresql://user:pass@postgresflask/blog
     ports:
       - "8080:80"
+    env_file:
+      - env.list
+    depends_on:
+      - pg_db
+  pg_db:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=timeweb
+      - POSTGRES_USER=timeweb
+      - POSTGRES_DB=timeweb
+    volumes:
+      - /var/lib/postgresql/data
+    ports:
+      - ${POSTGRES_PORT:-5531}:5531

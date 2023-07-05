@@ -1,9 +1,15 @@
 from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
+import psycopg2
 
+conn = psycopg2.connect(database="timeweb",
+                        user="timeweb",
+                        password="timeweb",
+                        host="172.21.0.2")
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://user:pass@postgresflask/blog'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://timeweb:timeweb@172.21.0.2/timeweb'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 class User(db.Model):
@@ -14,7 +20,8 @@ class User(db.Model):
     def __repr__(self):
         return '<User %r>' % self.username
 
-
+with app.app_context():
+    db.create_all()
 
 @app.get("/", endpoint="index")
 def hello_root():
@@ -48,6 +55,4 @@ def create_add():
 
 
 if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
-    app.run(debug=True,host='0.0.0.0', port=5000)
+    app.run(debug=True,host='0.0.0.0')

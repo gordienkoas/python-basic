@@ -1,27 +1,13 @@
-version: "3.9"
+version: "3"
 
 services:
-  app:
-    build:
-      dockerfile: ../homework_06/Dockerfile
-      context: ./
+  pg:
+    image: postgres
+    container_name: bd
     environment:
-      CONFIG_CLASS: ProductionConfig
-      SQLALCHEMY_DATABASE_URI: sqlite:///test.db
+      POSTGRES_DB: test
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
     ports:
-      - "8080:80"
-    depends_on:
-      pg:
-        condition: service_healthy
+      - "5432:5432"
 
-    volumes:
-      - ./:/app
-    ports:
-      - "5050:5000"
-
-    volumes:
-      - db-data:/var/lib/postgresql/data/pgdata
-
-
-volumes:
-  db-data:
