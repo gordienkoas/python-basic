@@ -1,14 +1,9 @@
 from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
-import psycopg2
 
-conn = psycopg2.connect(database="timeweb",
-                        user="timeweb",
-                        password="timeweb",
-                        host="172.21.0.2")
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://timeweb:timeweb@172.21.0.2/timeweb'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://timeweb:timeweb@db/timeweb'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 

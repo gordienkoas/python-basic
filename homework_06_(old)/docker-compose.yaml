@@ -6,14 +6,12 @@ services:
       dockerfile: ./Dockerfile
       context: ./
     environment:
-      CONFIG_CLASS: ProductionConfig
+      - DATABASE_URL=postgresql://timeweb:timeweb@5432/timeweb
     ports:
       - "8080:80"
-    env_file:
-      - env.list
     depends_on:
-      - pg_db
-  pg_db:
+      - db
+  db:
     image: postgres
     restart: always
     environment:
@@ -22,5 +20,3 @@ services:
       - POSTGRES_DB=timeweb
     volumes:
       - /var/lib/postgresql/data
-    ports:
-      - ${POSTGRES_PORT:-5531}:5531
