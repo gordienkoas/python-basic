@@ -25,7 +25,6 @@ def hello_root():
 @app.get("/about/", endpoint="about")
 def hello_about():
     return render_template('about.html')
-
 @app.route("/create-add/", methods=['POST', 'GET'], endpoint="create-add")
 def create_add():
     if request.method == "POST":
