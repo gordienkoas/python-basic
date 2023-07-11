@@ -58,7 +58,7 @@ cover/
 *.mo
 *.pot
 
-# Django stuff:
+# homework_07 stuff:
 *.log
 local_settings.py
 db.sqlite3

@@ -12,6 +12,7 @@
             {% for product in products %}
                 <li>
                     <code>${{ product.price }}</code>
+                    [{{ product.category.name }}]
                     -
                     {{ product.name }}
 
