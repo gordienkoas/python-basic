@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     #'django.contrib.staticfiles',
     'shop.apps.ShopConfig',
 ]
-
 # if DEBUG:
 #     INSTALLED_APPS.extend([
 #         "debug_toolbar",
