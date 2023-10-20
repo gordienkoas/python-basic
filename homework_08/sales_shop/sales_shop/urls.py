@@ -14,7 +14,7 @@ urlpatterns = [
     #path("categories-as-three/", categories_with_products_three, name="categories_with_products_three"),
 ]
 
-if settings.DEBUG:
-    urlpatterns.append(
-    path("__debug__/", include("debug_toolbar.urls")),
-    )
+# if settings.DEBUG:
+#     urlpatterns.append(
+#     path("__debug__/", include("debug_toolbar.urls")),
+#     )
