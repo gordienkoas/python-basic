@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Super Shop Detail View
+{% endblock %}
+
+{% block body %}
+    <div>
+        <h1>Super Shop Detail View</h1>
+        <h3>Product</h3>
+        <h3>{{ object.name }}</h3>
+        <span class='lead'>{{ object.price }} </span>
+        <div class='body'>{{ object.description }} </div>
+    </div>
+<a href="{% url 'shop' %}" > Go To Back</a>
+{% endblock %}
