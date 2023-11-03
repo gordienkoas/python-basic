@@ -30,3 +30,8 @@ class Product(models.Model):
 
     def __str__(self):
         return f"Product <{self.pk}, {self.name!r}>"
+
+    class Meta:
+        ordering = ['pk']
+        verbose_name = 'Shop product'
+        verbose_name_plural = 'Shop products'

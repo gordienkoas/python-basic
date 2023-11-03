@@ -4,13 +4,14 @@
 Super Shop Detail View
 {% endblock %}
 
-{% block body %}
+{% block main %}
     <div>
-        <h1>Super Shop Detail View</h1>
+        <h1>Detail View Products</h1>
         <h3>Product</h3>
         <h3>{{ object.name }}</h3>
-        <span class='lead'>{{ object.price }} </span>
-        <div class='body'>{{ object.description }} </div>
+        <img src="{{ object.image }}"><br>
+        <span class='lead'><b>Prise</b> {{ object.price }} <b>Description</b> {{ object.description }}</span>
+
     </div>
 <a href="{% url 'shop' %}" > Go To Back</a>
 {% endblock %}

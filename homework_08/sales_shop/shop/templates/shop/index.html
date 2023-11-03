@@ -4,8 +4,9 @@
 Super Shop
 {% endblock %}
 
-{% block body %}
+{% block main %}
     <div>
+        <p> Welcome, <b>{{ user.username }}</b>!</p>
         <h1>Super Shop</h1>
         <h3>Products</h3>
         <a href="{% url 'create' %}" > New product</a>
@@ -15,8 +16,8 @@ Super Shop
                     <code>${{ product.price }}</code>
                     [{{ product.category.name }}]
                     -
-                    {{ product.name }}
 
+                    <a href= {{product.pk}}>{{ product.name }}</a>
                 </li>
             {% endfor %}
         </ul>
