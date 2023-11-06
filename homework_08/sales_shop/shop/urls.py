@@ -16,7 +16,6 @@ urlpatterns = [
     #path('send/', main.send_mail),
     #path("categories-as-three/", categories_with_products_three, name="categories_with_products_three"),
 ]
-
 # if settings.DEBUG:
 #     import debug_toolbar
 #     urlpatterns += [
