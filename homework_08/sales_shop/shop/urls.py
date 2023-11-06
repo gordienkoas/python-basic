@@ -2,6 +2,7 @@ from django.template.defaulttags import url
 from django.urls import path, include
 #from .views import shop_index, categories_with_products_three
 import shop.views as shop
+from shop import admin
 
 app_name = "shop"
 
