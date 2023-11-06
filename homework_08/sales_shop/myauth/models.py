@@ -18,4 +18,4 @@ class MyUser(AbstractUser):
     # date_joined = None
     email = models.EmailField('email address', unique=True)
     #avatar = models.ImageField(upload_to='avatars', blank=True)
-    b_year = models.PositiveIntegerField(null=True)
+    b_year = models.PositiveIntegerField(null=True, blank=True)

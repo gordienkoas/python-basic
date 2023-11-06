@@ -1,4 +1,4 @@
-from django.contrib.auth.mixins import PermissionRequiredMixin
+from django.contrib.auth.mixins import PermissionRequiredMixin, LoginRequiredMixin
 from django.views.generic import ListView, CreateView, DetailView
 from django.urls import reverse, reverse_lazy
 from django.db.models import Q
@@ -25,7 +25,7 @@ from .models import Product
 #         },
 #     )
 
-class ProductsList(ListView):
+class ProductsList(LoginRequiredMixin, ListView):
     model = Product
     template_name = "shop/index.html"
     context_object_name = "products"
