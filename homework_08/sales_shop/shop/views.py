@@ -25,7 +25,7 @@ from .models import Product
 #         },
 #     )
 
-class ProductsList(ListView):
+class ProductsList(LoginRequiredMixin, ListView):
     model = Product
     template_name = "shop/index.html"
     context_object_name = "products"
