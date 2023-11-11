@@ -31,5 +31,5 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Test with pytest
       run: |
-        cd sales_shop
+        cd homework_08/sales_shop
         pytest
