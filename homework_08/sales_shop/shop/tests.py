@@ -5,7 +5,6 @@ from shop.models import Product
 
 # from unittest import TestCase
 
-
 class ProductsTest(TestCase):
     fixtures = ['shop.json', 'myauth.json']
 
