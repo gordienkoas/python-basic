@@ -2,7 +2,6 @@ from django.test import TestCase
 
 from shop.models import Product
 
-
 # from unittest import TestCase
 
 class ProductsTest(TestCase):
